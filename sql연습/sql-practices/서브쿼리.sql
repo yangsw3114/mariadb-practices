@@ -69,3 +69,5 @@ select d.dept_name, c.first_name, b.salary
                                       and a.to_date='9999-01-01'
                                       and b.to_date='9999-01-01'
 								 group by a.dept_no);
+
+
