@@ -8,11 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bookmall.vo.BookVo;
+import bookmall.vo.MemberVo;
 
-public class BookDao {
+
+public class MemberDao {
 	
-	public boolean insert(BookVo vo) {
+	
+	public boolean insert(MemberVo vo) {
 		Connection conn = null;
 		boolean result =false;
 		PreparedStatement pstmt = null;
@@ -20,19 +22,21 @@ public class BookDao {
 			
 			conn = getConnection();
 			//3. SQL문 준비
-			String sql ="insert into book values(null, ?, ?, ?);";
+			String sql ="insert into member values(null, ?, ?, ?,?)";
 			pstmt = conn.prepareStatement(sql);
 			
 			//4. 바인딩(binding)
-			pstmt.setString(1, vo.getTitle());
-			pstmt.setInt(2, vo.getPrice());
-			pstmt.setLong(3, vo.getCategoryNo());
+			pstmt.setString(1, vo.getName());
+			pstmt.setString(2, vo.getTel());
+			pstmt.setString(3, vo.getEmail());
+			pstmt.setString(4, vo.getPassword());
+			
 			
 			//5. SQL실행
 			int count = pstmt.executeUpdate();
 			
 			result = count == 1;
-			System.out.println("bookmall_bookdao_insert\n");
+			System.out.println("bookmall_Memberdao_insert\n");
 		}catch(SQLException e) {
 			System.out.println("error:" + e);
 		}
@@ -54,9 +58,9 @@ public class BookDao {
 	}
 	
 	
-	public List<BookVo> findAll() {
+	public List<MemberVo> findAll() {
 		
-		List<BookVo> result = new ArrayList<BookVo>();
+		List<MemberVo> result = new ArrayList<MemberVo>();
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -68,7 +72,7 @@ public class BookDao {
 			conn = getConnection();
 			
 			//3. SQL문 준비
-			String sql ="select no, title, price, category_no from book;";
+			String sql ="select no, name, tel, email, password from member";
 			pstmt = conn.prepareStatement(sql);
 			
 			
@@ -76,20 +80,21 @@ public class BookDao {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Long no = rs.getLong(1);
-				String title = rs.getString(2);
-				int price = rs.getInt(3);
-				Long category_no = rs.getLong(4);
+				String name = rs.getString(2);
+				String tel = rs.getString(3);
+				String email = rs.getString(4);
+				String password = rs.getString(5);
 				
-				BookVo vo = new BookVo();
+				MemberVo vo = new MemberVo();
 				vo.setNo(no);
-				vo.setTitle(title);
-				vo.setPrice(price);
-				vo.setCategoryNo(price);
-				
+				vo.setName(name);
+				vo.setTel(tel);
+				vo.setEmail(email);
+				vo.setPassword(password);
 				
 				result.add(vo);
 			}
-			System.out.println("bookmall_bookdao_findall\\n");
+			System.out.println("bookmall_Memberdao_findall\\n");
 			
 			
 		}catch(SQLException e) {
@@ -115,6 +120,7 @@ public class BookDao {
 
 	//모든 dao insert랑 select만 하면됨
 
+	
 	private Connection getConnection() throws SQLException {
 		Connection conn = null;
 		try {
