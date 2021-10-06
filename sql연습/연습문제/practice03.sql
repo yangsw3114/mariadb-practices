@@ -3,8 +3,18 @@
 -- 테이블간 조인(JOIN) SQL 문제입니다.
 -- 문제 1.
 -- 현재 급여가 많은 직원부터 직원의 사번, 이름, 그리고 연봉을 출력 하시오.
+select a.emp_no, concat(a.first_name, ' ', a.last_name) as "Full Name",
+ salary as "연봉"
+from employees a join salaries b on a.emp_no = b.emp_no
+and b.to_date = '9999-01-01'
+order by salary desc;
+
 -- 문제2.
 -- 전체 사원의 사번, 이름, 현재 직책을 이름 순서로 출력하세요.
+
+-- select emp_no, 
+-- from employees order by asc;
+
 -- 문제3.
 -- 전체 사원의 사번, 이름, 현재 부서를 이름 순서로 출력하세요..
 -- 문제4.
