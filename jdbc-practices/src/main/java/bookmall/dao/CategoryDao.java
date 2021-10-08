@@ -33,7 +33,7 @@ public class CategoryDao {
 			int count = pstmt.executeUpdate();
 			
 			result = count == 1;
-			System.out.println("bookmall_categorydao_insert\n");
+			//System.out.println("bookmall_categorydao_insert\n");
 		}catch(SQLException e) {
 			System.out.println("error:" + e);
 		}
@@ -87,7 +87,7 @@ public class CategoryDao {
 				
 				result.add(vo);
 			}
-			System.out.println("bookmall_categorydao_findall\\n");
+			//System.out.println("bookmall_categorydao_findall\\n");
 			
 			
 		}catch(SQLException e) {

@@ -13,11 +13,7 @@ public class BookDaoTest {
 		BookVo vo = null;
 		BookDao dao = new BookDao();
 		
-		vo=new BookVo();
-		vo.setTitle("트와일라잇");
-		vo.setAuthorNo(1L);
-		vo.setStatus("대여가능");
-		dao.insert(vo);
+
 		
 		vo.setTitle("뉴문");
 		vo.setAuthorNo(1L);

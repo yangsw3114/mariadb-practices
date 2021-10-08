@@ -36,7 +36,7 @@ public class MemberDao {
 			int count = pstmt.executeUpdate();
 			
 			result = count == 1;
-			System.out.println("bookmall_Memberdao_insert\n");
+			//System.out.println("bookmall_Memberdao_insert\n");
 		}catch(SQLException e) {
 			System.out.println("error:" + e);
 		}
@@ -94,7 +94,7 @@ public class MemberDao {
 				
 				result.add(vo);
 			}
-			System.out.println("bookmall_Memberdao_findall\\n");
+			//System.out.println("bookmall_Memberdao_findall\\n");
 			
 			
 		}catch(SQLException e) {
