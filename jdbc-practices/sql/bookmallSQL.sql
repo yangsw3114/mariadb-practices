@@ -13,11 +13,6 @@ alter table category auto_increment = 1;
 
 
 
-
-
-
-
-
 insert into member values(null, "양승우", "010-1234-5678", "abc123@naver.com","1234");
 insert into member values(null, "양아치", "010-1004-1004", "xyz1004@naver.com","1004");
 select no, name, tel, email, password from member;
@@ -44,11 +39,11 @@ insert into cart values(3,3,2);
 select count, book_no, member_no from cart;
 -- delete from cart;
 
+
 insert into order_ values(null,1234, 50000, "동서대학교", 1);
 select no, order_num, payprice, shipaddress, member_no from order_;
 -- delete from order_ ;
 -- alter table order_ auto_increment = 1;
-
 
 insert into order_book values(3, 2, 1); -- 수량3권 2번책인 1번주문리스트
 insert into order_book values(5, 3, 1);

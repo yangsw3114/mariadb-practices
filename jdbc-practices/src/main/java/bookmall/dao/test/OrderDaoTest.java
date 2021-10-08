@@ -2,17 +2,19 @@ package bookmall.dao.test;
 
 import java.util.List;
 
+import bookmall.dao.BookDao;
 import bookmall.dao.OrderDao;
+import bookmall.dao.OrderbookDao;
+import bookmall.vo.BookVo;
 import bookmall.vo.OrderVo;
+import bookmall.vo.OrderbookVo;
 
 
 
 public class OrderDaoTest {
 
 	public static void main(String[] args) {
-		System.out.println("에러1");
 		insertTest();
-		System.out.println("에러2");
 		findAllTest();
 	}
 	
@@ -21,6 +23,7 @@ public class OrderDaoTest {
 	private static void insertTest() {
 		OrderVo vo = null;
 		OrderDao dao = new OrderDao();
+
 		
 		vo=new OrderVo();
 		vo.setOrderNum(1234);
@@ -28,7 +31,6 @@ public class OrderDaoTest {
 		vo.setShipaddress("동서대학교");
 		vo.setMemberNo(1L);
 		dao.insert(vo);
-		
 	}
 
 	private static void findAllTest() {

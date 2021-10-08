@@ -84,7 +84,7 @@ public class BookDao {
 				vo.setNo(no);
 				vo.setTitle(title);
 				vo.setPrice(price);
-				vo.setCategoryNo(price);
+				vo.setCategoryNo(category_no);
 				
 				
 				result.add(vo);

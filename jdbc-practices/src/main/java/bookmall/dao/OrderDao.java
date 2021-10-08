@@ -8,7 +8,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import bookmall.vo.BookVo;
 import bookmall.vo.OrderVo;
+import bookmall.vo.OrderbookVo;
+import test.DeptVo;
 
 
 public class OrderDao {
@@ -117,8 +120,7 @@ public class OrderDao {
 		
 	}
 
-	//모든 dao insert랑 select만 하면됨
-
+	
 	private Connection getConnection() throws SQLException {
 		Connection conn = null;
 		try {

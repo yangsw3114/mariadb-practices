@@ -15,7 +15,7 @@ import bookmall.vo.MemberVo;
 import bookmall.vo.OrderVo;
 import bookmall.vo.OrderbookVo;
 
-public class BokkMall {
+public class BookMall {
 
 	public static void main(String[] args) {
 		
@@ -168,13 +168,14 @@ public class BokkMall {
 	private static void Orderinsert() {
 		OrderVo vo = null;
 		OrderDao dao = new OrderDao();
+
 		
 		vo=new OrderVo();
 		vo.setOrderNum(1234);
 		vo.setPayprice(50000);
 		vo.setShipaddress("동서대학교");
 		vo.setMemberNo(1L);
-		dao.insert(vo);
+		dao.insert(vo);		
 		
 	}
 
@@ -185,6 +186,8 @@ public class BokkMall {
 			System.out.println(vo);
 		}
 	}
+	
+	
 	
 	
 	private static void Orderbookinsert() {
